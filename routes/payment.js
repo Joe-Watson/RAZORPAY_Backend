@@ -2,7 +2,7 @@ import express from 'express';
 import Razorpay from 'razorpay';
 import crypto from 'crypto';
 import 'dotenv/config';
-import Payment from '../models/Payment.js';
+// import Payment from '../models/Payment.js';
 
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router.post('/order', (req, res) => {
                 return res.status(500).json({ message: "Something Went Wrong!" });
             }
             res.status(200).json({ data: order });
-            console.log(order)
+            // console.log(order)
         });
     } catch (error) {
         res.status(500).json({ message: "Internal Server Error!" });
@@ -64,12 +64,12 @@ router.post('/verify', async (req, res) => {
                 razorpay_signature
             });
 
-            // Save Payment 
-            await payment.save();
+            // // Save Payment 
+            // await payment.save();
 
             // Send Message 
             res.json({
-                message: "Payement Successfully"
+               success:true
             });
         }
     } catch (error) {
