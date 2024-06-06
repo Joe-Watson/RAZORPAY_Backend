@@ -35,6 +35,14 @@ router.post('/order', (req, res) => {
         console.log(error);
     }
 })
+ async function GenerateInvoice(){
+    try{
+    
+
+    }catch(error){
+         console.log(error)
+    }
+ }
 
 // ROUTE 2 : Create Verify Api Using POST Method http://localhost:4000/api/payment/verify
 router.post('/verify', async (req, res) => {
